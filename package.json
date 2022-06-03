@@ -1,0 +1,19 @@
+{
+  "name": "psalms-manager-server",
+  "version": "1.0.0",
+  "description": "Resucito (Server)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gubiarpa/psalms-manager-server.git"
+  },
+  "author": "arpasoft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gubiarpa/psalms-manager-server/issues"
+  },
+  "homepage": "https://github.com/gubiarpa/psalms-manager-server#readme"
+}
