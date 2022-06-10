@@ -2,6 +2,7 @@
 
 ## EndPoint
 # Lista de Celebraciones (Palabra, Eucaristía, Convivencia, etc.)
+#    ['Palbra','Convivencia','Ecuaristia','Laudes']
 # Lista de Secuencias según Celebración (Entrada, Respuesta 1, Respuesta 2, etc.)
 # Lista de todas las Secuencias
 # Lista de todos los Cantos
