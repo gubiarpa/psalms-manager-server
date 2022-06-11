@@ -3,13 +3,13 @@ const { Psalm } = require('../models');
 const { ObjectId } = require('mongoose').Types;
 const { songs } = require('../uploads/list')
 
-const psalmGet = async(req = request, res = response) => {
+const psalmsGet = async(req = request, res = response) => {
     const { from = 0, limit = 5 } = req.query;
     const query = { state: true };
 
     const [totalRows, psalms] = await Promise.all([
         Psalm.countDocuments(),
-        Psalm.find(query).skip(from).limit(limit)
+        Psalm.find().skip(from).limit(limit)
     ]);
 
     res.json({
@@ -61,6 +61,6 @@ const psalmPost = async(req = request, res = response) => {
 }
 
 module.exports = {
-    psalmGet,
+    psalmsGet,
     psalmPost,
 }
