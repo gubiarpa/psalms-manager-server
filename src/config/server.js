@@ -1,4 +1,5 @@
 const express = require('express');
+const { dbConnection } = require('../database/config');
 
 require('dotenv').config();
 
@@ -8,14 +9,28 @@ class Server {
         this.app = express();
         this.port = process.env.PORT;
         this.pathList = {
-            testPath : '/api/test',
+            pathTest :          '/api/test',
+            pathCelebration :   '/api/celebration',
+            pathpsalm :         '/api/psalm',
         }
 
+        this.connectDB();
+        this.middlewares()
         this.routes();
     }
 
+    async connectDB() {
+        await dbConnection();
+    }
+
+    middlewares() {
+        this.app.use(express.json())
+    }
+
     routes() {
-        this.app.use(this.pathList.testPath, require('../routes/tests'));
+        this.app.use(this.pathList.pathTest, require('../routes/tests'));
+        this.app.use(this.pathList.pathCelebration, require('../routes/celebration'));
+        this.app.use(this.pathList.pathpsalm, require('../routes/psalm'));
     }
 
     listen() {
