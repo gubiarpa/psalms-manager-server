@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { dbConnection } = require('../database/config');
+const logger = require('../utils/logger');
 
 require('dotenv').config();
 
@@ -37,7 +38,7 @@ class Server {
 
     listen() {
       this.app.listen(this.port, () => {
-          console.log(`Server running on port ${ this.port }`);
+          logger.info(`Server running on port ${ this.port }`);
       });  
     }
 }
