@@ -1,7 +1,7 @@
 const { request, response } = require('express');
 const { Psalm } = require('../models');
 const { ObjectId } = require('mongoose').Types;
-const { songs } = require('../uploads/list')
+const { songs, logger } = require('../helpers');
 
 const psalmsGet = async(req = request, res = response) => {
 

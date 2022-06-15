@@ -1,8 +1,7 @@
 const { request, response } = require('express');
 const { Celebration } = require('../models');
 const { ObjectId } = require('mongoose').Types;
-const { celebrations } = require('../uploads/list')
-const logger = require('../utils/logger');
+const { celebrations, logger } = require('../helpers');
 
 const celebrationsGet = async(req = request, res = response) => {
 

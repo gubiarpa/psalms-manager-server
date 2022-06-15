@@ -1,9 +1,10 @@
+
 const { createLogger, format, transports } = require('winston');
 
 require('winston-mongodb');
 require('dotenv').config();
 
-module.exports = createLogger({
+const logger = createLogger({
     format: format.combine(
         format.simple(),
         format.errors({ stack: true }),
@@ -31,3 +32,7 @@ module.exports = createLogger({
         })
     ]
 });
+
+module.exports = {
+    logger,
+}
