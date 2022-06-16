@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { dbConnection } = require('../database/config');
-const logger = require('../utils/logger');
+const { logger } = require('../helpers');
 
 require('dotenv').config();
 
